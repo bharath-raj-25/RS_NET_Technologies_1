@@ -1,0 +1,98 @@
+@model RSTechnologiesWeb.Models.Course
+
+<div class="container mt-5 fade-in">
+    <h2 class="text-center text-white">Add a New Course</h2>
+
+    <form asp-action="Create" method="post" class="p-4 rounded glass-container">
+        <div class="form-group">
+            <label asp-for="Name">Course Name</label>
+            <input asp-for="Name" class="form-control form-control-sm animated-input" placeholder="Enter course name" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+            <textarea asp-for="Description" class="form-control form-control-sm animated-input" placeholder="Enter course description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Duration">Duration</label>
+            <input asp-for="Duration" class="form-control form-control-sm animated-input" placeholder="Enter course duration" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price">Price</label>
+            <input asp-for="Price" class="form-control form-control-sm animated-input" placeholder="Enter course price" />
+        </div>
+
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-danger btn-animated">Save</button>
+            <a asp-controller="Courses" asp-action="Index" class="btn btn-secondary btn-animated">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<!-- Custom Styling and Animations -->
+<style>
+    /* Background Styling - Red Theme */
+    body {
+        background: linear-gradient(135deg, #eb8b8b, #ff6666); /* Lighter Red Gradient */
+        color: white;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Glassmorphism Form Container */
+    .glass-container {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    /* Input Field Styling */
+    .animated-input {
+        transition: all 0.3s ease-in-out;
+        border-radius: 5px;
+        border: 1px solid white;
+    }
+
+    .animated-input:focus {
+        box-shadow: 0 0 10px rgba(204, 0, 0, 0.6);
+        border-color: #cc0000;
+        transform: scale(1.02);
+    }
+
+    /* Button Styling */
+    .btn-animated {
+        transition: all 0.3s ease-in-out;
+        padding: 8px 16px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .btn-danger {
+        background-color: #cc0000;
+        border: none;
+    }
+
+    .btn-danger:hover {
+        background-color: #990000;
+        transform: scale(1.05);
+    }
+
+    .btn-secondary {
+        background-color: #666;
+    }
+
+    .btn-secondary:hover {
+        background-color: #444;
+        transform: scale(1.05);
+    }
+
+    /* Fade-in Animation */
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    
+</style>

@@ -1,0 +1,142 @@
+﻿/* ==========================
+   🌟 General Styles
+========================== */
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0077cc;
+  transition: color 0.3s ease-in-out;
+}
+
+a.navbar-brand:hover {
+  color: #ff5733;
+}
+
+/* Smooth color change on all links */
+a {
+  color: #0077cc;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #ff5733;
+}
+
+/* ==========================
+   🎨 Button Styles
+========================== */
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #ff5733;
+  border-color: #c4411b;
+  transform: scale(1.05);
+}
+
+/* ==========================
+   📌 Navbar Styling
+========================== */
+.nav-pills .nav-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+  animation: pulse 1s infinite alternate;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #ff5733;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Button Click Effect */
+button:active {
+  transform: scale(0.95);
+}
+
+/* ==========================
+   🔥 Navbar Animations
+========================== */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px rgba(27, 110, 194, 0.3); }
+  100% { transform: scale(1.05); box-shadow: 0 0 15px rgba(27, 110, 194, 0.5); }
+}
+
+/* ==========================
+   🏆 Box Shadows & Borders
+========================== */
+.border-top {
+  border-top: 2px solid #e5e5e5;
+  animation: borderFade 2s infinite alternate;
+}
+
+.border-bottom {
+  border-bottom: 2px solid #e5e5e5;
+}
+
+/* Smooth border color transition */
+@keyframes borderFade {
+  0% { border-color: #0077cc; }
+  100% { border-color: #ff5733; }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.box-shadow:hover {
+  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .2);
+}
+
+/* ==========================
+   🚀 Footer Animation
+========================== */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+  background: linear-gradient(90deg, #0077cc, #ff5733);
+  color: #fff;
+  text-align: center;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Fade In Effect */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================
+   🌀 Page Loading Animation
+========================== */
+body {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

@@ -1,0 +1,109 @@
+@model IEnumerable<RSTechnologiesWeb.Models.AboutUs>
+
+<div class="container mt-5">
+    <!-- About Us Section -->
+    <div class="text-center fade-in">
+        <h1 class="display-4 text-danger">About RS Technologies</h1>
+        <p class="lead text-muted">Your trusted institute for IT courses and professional training.</p>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="card my-4 shadow slide-up">
+            <div class="card-body">
+                <h2 class="card-title text-primary">@item.Title</h2>
+                <p class="card-text">@item.Description</p>
+            </div>
+        </div>
+    }
+
+    <!-- Promotional Section with Animation -->
+    <section class="promo-section text-white text-center py-5 slide-in">
+        <h2>Why Choose RS Technologies?</h2>
+        <p>We provide industry-leading IT courses with real-world projects, expert trainers, and 100% practical learning.</p>
+        <a href="/Courses/Index" class="btn btn-light btn-lg mt-3 scale-on-hover">Explore Our Courses</a>
+    </section>
+
+    <!-- Contact Details Section -->
+    <div class="contact-section bg-light p-4 mt-5 rounded shadow fade-in">
+        <h3 class="text-danger">Contact Us</h3>
+        <p><strong>📍 Address:</strong> RS Net Technologies, Parasakthi Nagar,Villapuram Madurai - 12</p>
+        <p><strong>📞 Phone:</strong> +91 8072711238</p>
+        <p><strong>📧 Email:</strong> <a href="mailto:rsnet_technologies@yahoo.com" class="text-decoration-none">rsnet_technologies@yahoo.com</a></p>
+       
+    </div>
+</div>
+
+<!-- Custom Styling and Animations -->
+<style>
+    body {
+        background: linear-gradient(135deg, #eb8b8b, #ff6666);
+        color: #333;
+    }
+
+    .container {
+        max-width: 900px;
+    }
+
+    .card {
+        background: white;
+        border-left: 5px solid #b30000;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .promo-section {
+        background: url('/images/promo-bg.jpg') center/cover no-repeat;
+        padding: 50px 20px;
+        border-radius: 15px;
+        opacity: 0;
+        transform: translateX(-100%);
+        animation: slideIn 1s ease-out forwards;
+    }
+
+    .promo-section h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .contact-section {
+        font-size: 1.2rem;
+        border-left: 5px solid #b30000;
+        transition: background 0.5s ease-in-out;
+    }
+
+    .contact-section:hover {
+        background: #ffdddd;
+    }
+
+    /* Button Hover Animation */
+    .scale-on-hover {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .scale-on-hover:hover {
+        transform: scale(1.1);
+    }
+
+    /* Fade-in Animation */
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    /* Slide-in from left */
+    .slide-in {
+        opacity: 0;
+        transform: translateX(-100%);
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    /* Slide-up Animation */
+    .slide-up {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: slideUp 1s ease-out forwards;
+    }</style>

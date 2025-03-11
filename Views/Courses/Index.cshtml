@@ -1,0 +1,99 @@
+@model IEnumerable<RSTechnologiesWeb.Models.Course>
+
+<div class="container mt-5 fade-in">
+    <h2 class="text-center">All Courses</h2>
+
+    <!-- Add Course Button -->
+    <div class="text-end">
+        <a asp-controller="Courses" asp-action="Create" class="btn btn-danger">➕ Add Course</a>
+    </div>
+
+    <div class="table-responsive mt-3">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var course in Model)
+                {
+                    <tr>
+                        <td>@course.Name</td>
+                        <td>@course.Description</td>
+                        <td>@course.Duration</td>
+                        <td>@course.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    /* Background Styling */
+    body {
+        background: linear-gradient(135deg, #eb8b8b, #ff6666); /* Light Red Gradient */
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Container Styling */
+    .container {
+        max-width: 900px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Table Styling */
+    .table {
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #ffcccc;
+        transform: scale(1.02);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Table Header Styling */
+    .table-dark {
+        background-color: #b30000;
+        color: white;
+    }
+
+    /* Button Styling */
+    .btn-danger {
+        background-color: #cc0000;
+        border: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-danger:hover {
+        background-color: #990000;
+        transform: scale(1.05);
+    }
+
+    /* Animations */
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    .slide-up {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: slideUp 0.8s ease-out forwards;
+    }
+
+    .scale-on-hover {
+        transition: transform 0.3s ease-in-out;
+    }

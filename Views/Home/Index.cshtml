@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Fullscreen Background Video -->
+<video autoplay muted loop id="bg-video">
+    <source src="~/videos/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- Content Section -->
+<div class="content">
+   
+
+    <h1>Welcome to RS Technologies</h1>
+    <p>Your best institute for IT courses.</p>
+
+    <a class="btn btn-primary" asp-controller="AboutUs" asp-action="Index">Learn About Us</a>
+    <a class="btn btn-success" asp-controller="Courses" asp-action="Index">Explore Courses</a>
+</div>
+
+<!-- Styles for Fullscreen Video -->
+<style>
+    /* Background Video */
+    #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; /* Ensures video covers entire screen */
+        z-index: -1; /* Sends video to the background */
+    }
+
+    /* Content Styling */
+    .content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: white; /* Ensures text is visible on video */
+        padding-top: 20vh; /* Adjusts content position */
+    }
+
+    /* Buttons Styling */
+    .btn {
+        margin: 10px;
+    }
+</style>
